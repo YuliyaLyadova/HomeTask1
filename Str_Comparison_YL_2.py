@@ -1,23 +1,38 @@
-#question to Yuri: doesn't make sense for me to create fuction. don't understand waht fucntion is supposed to return
-def comp_str(str_1,str_2, delimeter=' '):
-    return str_1+delimeter+str_2
+# question to Yuri: It doesn't make sense to me how to create a function.
+# I don't understand what is function supposed to return.
 
 # question to Yuri: no sence to check the type of str_1 and str_2 as by design variables are of string type
+# answer: by design user could enter anything, what he or she wants but your script has to check out that those
+# entered variables are truly strings.
 
-str_1=input('Enter the 1st string: ')
-str_2=input('Enter the 2nd string: ')
 
-if (type(str_1)==str and type(str_2)==str):
-    print ('Both variables are of str type') 
+def is_strings(first_string, second_string):
+    if type(first_string) == str and type(second_string) == str:
+        return '\nBoth variables are strings.'
+    else:
+        return 0
 
-    if len(str_1)==len(str_2):
-        print ('1')
-    elif len(str_1)>len(str_2):
-            print ('2')
-    elif len(str_1)!=len(str_2) and str_2=='learn':
-        print ('3')
-    elif len(str_1)<len(str_2):
-        print ('4')
 
-else:
-    print ('0')
+def main(first_string, second_string):
+
+    check_strings = is_strings(first_string, second_string)
+
+    if check_strings == 0:
+        return 0
+    else:
+        print(check_strings)
+
+    if len(first_string) == len(second_string):
+        return 1
+    elif len(first_string) > len(second_string):
+        return 2
+    elif len(first_string) != len(second_string) and second_string == 'learn':
+        return 3
+    elif len(first_string) < len(second_string):
+        return 4
+
+
+if __name__ == '__main__':
+    str_1 = input('Enter the 1st string: ')
+    str_2 = input('Enter the 2nd string: ')
+    print(main(str_1, str_2))

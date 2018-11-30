@@ -8,20 +8,20 @@ if 'Валера' in mylist:
 #mylist=['Вася','Маша','Петя','Валера', 'Саша', 'Даша']
 #while True:
 #    x=mylist.pop(-len(mylist)+1)
-#    
+#
 #    if x!='Валера' mylist.append('x'):
 #    break
 
-#    else: 
+#    else:
 #        print('Валера нашелся #2')
 
 #Question to Yura: below is my variant #1. Doesn't work as list is considered to be empty
 mylist=['Вася','Маша','Петя','Валера', 'Саша', 'Даша']
 while True:
     x=mylist.pop(-len(mylist)+1)
-    
+
     if x!='Валера':
         print (x)
-    
-    else: 
+
+    else:
         print('Валера нашелся #2')

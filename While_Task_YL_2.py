@@ -1,20 +1,27 @@
-#Question to Yura: don't understand how def works. As I try to use def algorithm always breaks...
-#def ask_user(user_answer):
+# Question to Yura: don't understand how def works. As I try to use def algorithm always breaks...
+# def ask_user(user_answer):
 
-conv_dictionary={'Как дела?':'Хорошо','Что делаешь?':'Программирую!'}
+# answer: def is from word define. This tag means only that next part of a python code is function. Nothing more.
 
-while True: 
-    user_answer=input('Как дела? ')
-    
-    if user_answer==conv_dictionary['Как дела?']:
-        user_answer_2=input('Что делаешь? ')
-        while True:
-            if user_answer_2==conv_dictionary['Что делаешь?']:
-                break 
 
-            else:
-                 user_answer_2=input('Что делаешь? ')
+conv_dictionary = {
+    'Хорошо': 'Отлично!',
+    'Как дела?': 'Хорошо',
+    'Что делаешь?': 'Программирую!'
+}
 
-    else:
-        print('Точно {}? Подумай еще раз!'.format(user_answer))
-        
+
+def main():
+
+    while True:
+        user_answer = input('Как дела? ')
+
+        if user_answer in conv_dictionary: # In this case Python will look for dict keys.
+            return conv_dictionary[user_answer]
+        else:
+            print('Точно {}? Подумай еще раз!'.format(user_answer))
+            continue
+
+
+if __name__ == '__main__':
+    print(main())
